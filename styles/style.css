@@ -2,17 +2,17 @@
 
 .header{
   display: grid;
-  grid-template-columns: 452px 148px 452px;
-  padding: 92px 24px 96px;
+  grid-template-columns: 1fr min-content 1fr;
+  margin: 92px 48px 96px;
   align-items: center;
 }
 
 .header__links-list{
   display: flex;
   align-items: center;
+  justify-content: stretch;
   list-style: circle;
-  gap: 25px;
-  padding-left: 26px;
+  gap: 32px;
 }
 
 .header__links-list-item:first-child{
@@ -25,7 +25,7 @@
   font-size: 18px;
 }
 
-.no-underline{
+.header__link_active{
   text-decoration: none;
 }
 
@@ -35,18 +35,22 @@
 }
 
 .header__logo-image{
+  min-width: 148px;
   max-height: 105px;
 }
 
 .address{
-  padding-left: 184px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.3px;
+}
+.header__address{
+  justify-self: end;
+  margin-right: 40px;
 }
 
-.header__address-link-telephone{
-  text-underline-offset: 3px;
-}
-
-.header__address-link-email{
+a.header__address-link{
   text-underline-offset: 4px;
 }
 
@@ -61,7 +65,7 @@
   color: white;
   background-position: center;
   background-size: cover;
-  padding: 165px 50px 0px;
+  padding: 172px 50px 0px;
 }
 
 .overlay{
@@ -71,33 +75,35 @@
   z-index: -1;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .cover__title{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
   font-weight: 700;
   font-size: 100px;
   text-transform: uppercase;
   letter-spacing: 30px;
   line-height: 100%;
-  margin-bottom: 147px;
+}
+
+.aligned-text,
+.aligned-text_center,
+.aligned-text_right{
+  display: block;
 }
 
 .aligned-text{
-  display: block;
   text-align: left;
 }
 
 .aligned-text_center{
-  display: block;
   text-align: center;
 }
 
 .aligned-text_right{
-  display: block;
   text-align: right;
 }
 
@@ -111,8 +117,10 @@
 
 .cover__description{
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 62px;
+  margin-top: 135px;
+  padding-bottom: 50px;
 }
 
 .cover__description-text{
@@ -120,7 +128,8 @@
   font-size: 22px;
   line-height: 28px;
   text-transform: uppercase;
-  word-spacing: 17px;
+  word-spacing: 18px;
+  margin-right: 50px;
 }
 .bet-button{
   cursor: pointer;
@@ -131,10 +140,12 @@
   font-family: "Raleway", sans-serif;
   background: transparent;
   color: white;
-  border: 1px solid white;
+  border: 1px solid currentColor;
   padding: 12px 32px;
-  margin-left: 110px;
   text-transform: uppercase;
+  position: relative;
+  left: 29px;
+  bottom: 3px;
 }
 
 /* Конец верстки cover */
@@ -158,7 +169,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   list-style: none;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .lots__card-list-item{
@@ -179,26 +190,27 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 51px 40px 0px;
+  padding: 49px 40px 0px;
   color: white;
+}
+
+.card_type_film,
+.card_type_book,
+.card_type_picture{
+  background-position: center;
+  background-size: cover;
 }
 
 .card_type_film {
   background-image: url("../images/card-lot-01.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .card_type_book {
   background-image: url("../images/card-lot-02.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .card_type_picture {
   background-image: url("../images/card-lot-03.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .card__title{
@@ -214,7 +226,7 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
-  margin: auto 0px 48px 0px;
+  margin: auto 0px 46px 0px;
 }
 
 .lots__look-more-link{
@@ -240,14 +252,19 @@
   width: 240px;
   height: 240px;
   background-color: black;
-  margin: 35px 47px;
-  border-radius: 120px;
+  margin: 35px 70px;
+  border-radius: 50%;
 }
 
 .about__logo-image{
   width: 148px;
   height: 114px;
   margin: auto;
+}
+.about__column{
+  position: relative;
+  max-width: 693px;
+  right: 25px;
 }
 
 .about__title{
@@ -262,10 +279,11 @@
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  margin-bottom: 24px;
 }
 
-.about__text:first-of-type{
-  margin-bottom: 24px;
+.about__text:last-child{
+  margin-bottom: 0px;
 }
 /* Конец верстки about */
 
@@ -301,12 +319,15 @@
   text-underline-offset: 4px;
 }
 
+.footer__menu-link_active{
+  text-decoration: none;
+}
+
 .footer__social-list{
   list-style: none;
   display: flex;
   flex-direction: row;
   gap: 48px;
-  align-items: center;
   justify-content: flex-end;
 }
 
