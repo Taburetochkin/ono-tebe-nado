@@ -44,13 +44,11 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 24.3px;
-}
-.header__address{
   justify-self: end;
   margin-right: 40px;
 }
 
-a.header__address-link{
+.address-link{
   text-underline-offset: 4px;
 }
 
@@ -89,14 +87,8 @@ a.header__address-link{
   line-height: 100%;
 }
 
-.aligned-text,
-.aligned-text_center,
-.aligned-text_right{
-  display: block;
-}
-
 .aligned-text{
-  text-align: left;
+  display: block;
 }
 
 .aligned-text_center{
@@ -192,11 +184,6 @@ a.header__address-link{
   flex-direction: column;
   padding: 49px 40px 0px;
   color: white;
-}
-
-.card_type_film,
-.card_type_book,
-.card_type_picture{
   background-position: center;
   background-size: cover;
 }
@@ -242,8 +229,9 @@ a.header__address-link{
 /* Верстка about */
 
 .about{
+  position: relative;
   display: grid;
-  grid-template-columns: 407px 693px;
+  grid-template-columns: 384px 716px;
   padding-top: 146px;
 }
 
@@ -262,9 +250,7 @@ a.header__address-link{
   margin: auto;
 }
 .about__column{
-  position: relative;
   max-width: 693px;
-  right: 25px;
 }
 
 .about__title{
@@ -296,14 +282,11 @@ a.header__address-link{
 }
 
 .footer .address{
-  padding-left: 0px;
+  padding-right: 0px;
+  justify-self: flex-start;
 }
 
-.footer__address-link-telephone{
-  text-underline-offset: 3px;
-}
-
-.footer__address-link-email{
+.footer__address-link{
   text-underline-offset: 4px;
 }
 
